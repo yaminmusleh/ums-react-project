@@ -7,7 +7,7 @@ export default function Users() {
   const [error, setError] = useState("");
   const getUsers = async () => {
     try {
-      const response = await axios.get(`https://ums12.runasp.net/api/users`);
+      const response = await axios.get(`${import.meta.env.VITE_BURL}/users`);
       setUsers(response.data.users);
     } catch (error) {
       setError(`${error}`);
